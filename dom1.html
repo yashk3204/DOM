@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- id can be used to access only one element but class can access multiple elements -->
+    <ul>
+        <li class="cl">List 1</li>
+        <li id="first">List 2</li>
+        <li class="cl">List 3</li>
+    </ul><hr>
+
+    <h2>Heading 1</h2>
+    <p>Paragraph 1</p>
+    <div id="div1">
+    <h2>Heading 2</h2>
+    <p>Paragraph 2</p>
+    <h2>Heading 3</h2>
+    <p>Paragraph 3</p>
+    </div>
+
+    <script>
+        
+        // by ID
+        let ele1 = document.getElementById("first");
+        console.log(ele1.innerHTML);  // prints "List 2"
+        ele1.innerHTML = "<p> hello world </p>"; // changes the content from "List 2" to "hello world"
+        // by Class name
+        let ele2 = document.getElementsByClassName("cl"); // creates an array of elements with class "cl" so we cannot console.log(ele2.innerHTML)
+        for(let i=0; i<ele2.length; i++) {
+            ele2[i].innerHTML = "<p> class element </p>"
+        }
+
+        // by Tag name
+        let ele3 = document.getElementsByTagName("h2");
+        for(let i=0; i<ele3.length; i++) {
+            ele3[i].innerHTML = "Heading"
+        }
+
+        // by Tag name but in only a part of the document
+        let div1 = document.getElementById("div1");
+        let ele4 = div1.getElementsByTagName("h2");
+        for(let i=0; i<ele4.length; i++) {
+            ele4[i].innerHTML = "Heading 2 or 3"
+        }
+
+    </script>
+
+</body>
+
+</html>
