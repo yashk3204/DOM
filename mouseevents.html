@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 2000px;
+        }
+        #box{
+            height: 100px;
+            width: 100px;
+            background-color: blueviolet;
+        }
+    </style>
+</head> 
+
+<body>
+    
+    <div id="box" ondblclick="fun1()" oncontextmenu="fun2()"></div><br><br>
+    <form action="">
+        <input type="text" id="myInput">
+    </form>
+    
+    <script>
+
+        function fun1() {
+            alert("double clicked");
+        }
+        function fun2() {
+            alert("right clicked");
+        } 
+
+        window.addEventListener('keydown', checkKey);
+        function checkKey(event) {
+            console.log(event.key); // prints whichever key(s) is/are pressed
+        }
+
+        /* scroll event
+        window.addEventListener('scroll', function() {
+            console.log("Scrolling...");
+        }) */
+        window.addEventListener('wheel', function(event) {
+            if(event.deltaY < 0) {
+                console.log("scrolling up");
+            }
+            else if(event.deltaY > 0) {
+                console.log("scrolling down");
+            }
+        })
+
+        window.addEventListener('scroll', function() {
+            if(window.pageYOffset > 500) {
+                document.body.style.background = "red";
+            }
+            else if(window.pageYOffset < 500) {
+                document.body.style.background = "white";
+            }
+        })
+
+        // input events
+        let x = document.getElementById("myInput");
+        x.addEventListener('focus', focusFunction);
+        x.addEventListener('blur', blurFunction);
+        function focusFunction() {
+            x.style.background = "yellow";
+        }
+        function blurFunction() {
+            x.style.background = "white";
+        }
+        x.addEventListener('change', function() {
+            console.log(this.value);
+        }) // prints everything that is typed in the input box
+
+    </script> 
+
+</body>
+</html>

@@ -17,13 +17,13 @@
         <li class="cl">List 3</li>
     </ul><hr>
 
-    <h2>Heading 1</h2>
-    <p>Paragraph 1</p>
+    <h2 class="intro">Heading 1</h2>
+    <p class="intro">Paragraph 1</p>
     <div id="div1">
     <h2>Heading 2</h2>
     <p>Paragraph 2</p>
     <h2>Heading 3</h2>
-    <p>Paragraph 3</p>
+    <p class="intro">Paragraph 3</p>
     </div>
 
     <script>
@@ -49,6 +49,13 @@
         let ele4 = div1.getElementsByTagName("h2");
         for(let i=0; i<ele4.length; i++) {
             ele4[i].innerHTML = "Heading 2 or 3"
+        }
+
+        // Query Selector
+        let qs1 = document.querySelector("p.intro"); //selects only the first element with class p.intro
+        let qs2 = document.querySelectorAll("p.intro"); //selects all elements with class p.intro as an array
+        for(let i=0; i<qs2.length; i++) {
+            qs2[i].innerHTML = "para"
         }
 
     </script>

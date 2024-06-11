@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+        <div id="intro">
+            <p id="hello">Hello, this is a p tag.</p>
+        </div>
+
+        <ul id="list">
+            <li>List 1</li>
+            <li>List 2</li>
+            <li>List 3</li>
+            <li>List 4</li>
+        </ul>
+
+        <ul id="menu">
+            <li>Home</li>
+            <li>Products</li>
+            <li>About</li>
+        </ul>
+
+        <script>
+
+            // adding more elements to previous code through JavaScript
+            let e1 = document.getElementById("intro");
+            let h1 = document.createElement('h1');
+            h1.class = "headingclass"; // we can add a class to the new tag
+            h1.id = "headingid"; // we can add an id to the new tag
+            let text1 = document.createTextNode("This is a h1 tag.");
+            h1.appendChild(text1);
+            e1.appendChild(h1); // appends the new h1 tag to the paragraph having id "intro"
+
+            let h2 = document.createElement('h2');
+            // we can use the textContent method instead of creating a TextNode and then appending text
+            h2.textContent = "This is a h2 tag."
+            // we can directly append elements to the body of the document
+            document.body.appendChild(h2);
+
+            // we can also read text content using the .textContent method
+            let text2 = document.getElementById("hello");
+            console.log(text2.textContent);
+
+            // adding element to a list
+            let list1 = document.getElementById("list");
+            let item5 = document.createElement('li');
+            item5.textContent = "List 5";
+            list1.appendChild(item5);
+
+            // adding element to the beginning or middle of a list
+            let item1 = list1.firstElementChild;
+            let item0 = document.createElement('li');
+            item0.textContent = "List 0";
+            list1.insertBefore(item0, item1);
+
+            // removing a child element
+            let parent=document.getElementById("menu");
+            let ele = parent.firstElementChild.nextElementSibling.nextElementSibling;
+            parent.removeChild(ele);
+            // to remove the entire menu: document.body.removeChild(parent);
+
+            // cloning an element
+            let menu = document.getElementById("menu");
+            let cloneEle = menu.cloneNode(true); // if false is entered as parameter, only parent element is cloned and not its children
+            document.body.appendChild(cloneEle);
+            // to change the id of the cloned element
+            cloneEle.id = "menu2";
+
+            // replacing an element
+            let services = document.createElement('li');
+            services.textContent = "Services";
+            let replace = menu.firstElementChild.nextElementSibling;
+            parent.replaceChild(services, replace);
+
+            // insert adjacent HTML
+            // e1 = document.getElementById("intro");
+            let newh1 = "<h1>New h1</h1>";
+            e1.insertAdjacentHTML('beforebegin', newh1);
+            // instead of 'beforebegin' we can also use 'afterbegin', 'beforeend' or 'afterend'
+
+            
+
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>Heading 1</h2>
+    <ul>
+        <li id="intro">list 1</li>
+        <li>list 2</li>
+        <li>list 3</li>
+        <li>list 4</li>
+    </ul>
+    <ul id="parent">
+        <li>list a</li>
+        <li>list b</li>
+        <li>list c</li>
+        <li>list d</li>
+    </ul>
+    <ul>
+        <li>list 1</li>
+        <li id="sibling">list 2</li>
+        <li>list 3</li>
+        <li>list 4</li>
+    </ul>
+
+    <script>
+
+        let e1 = document.getElementById("intro");
+        let parent1 = e1.parentElement;
+        parent1.innerHTML = "haha"; // replaces the entire parent list with haha
+
+        let e2 = document.getElementById("parent");
+        let child1 = e2.firstElementChild; // first child (list a) gets selected
+        let child2 = e2.lastElementChild; // last child (list d) gets selected
+        let children = e2.children; // selects all children
+        child2.innerHTML = "hi"
+
+        let e3 = document.getElementById("sibling");
+        let sib1 = e3.previousElementSibling; // selects list 1
+        let sib2 = e3.nextElementSibling; // selects list 3
+        sib1.innerHTML = "previous element sibling";
+        sib2.innerHTML = "next element sibling";
+
+    </script>
+
+</body>
+
+</html>

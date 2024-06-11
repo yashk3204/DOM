@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 100px;
+            background-color: cornsilk;
+        }
+        #myDiv{
+            padding: 50px;
+            background-color: darkblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="btn" onclick="btnClick()">Click Here</button>
+    <hr>
+    <div id="myDiv">
+    <button id="btn2">Button 2</button>
+    </div>
+    <hr>
+    <a href="https://www.google.com" id="anchor">Click to open Google</a>
+
+    <script>
+
+        function btnClick() {
+            alert("Button was clicked.");
+        }
+        /* can also be done this way:
+             let btn = document.getElementById("btn");
+             btn.addEventListener('click', btnClick);
+        */
+        let btn = document.getElementById("btn");
+        btn.addEventListener('mouseover', function() {
+            alert("Mouse over is activated.")
+        });  // here we have used an anonymous function
+        // similarly mouseout carries out the function when mouse is hovered out of the button
+
+        // removing an event listener: we must not use anonymous functions if it may have to be removed
+        function click1() {
+            console.log("Click activated");
+        }
+        btn.addEventListener('click', click1);
+        btn.removeEventListener('click', click1);
+
+        /* Page load events:
+            window.addEventListener('load', function() {
+            console.log("fully loaded"); })
+           prints fully loaded after the page fully loads. */
+
+        let d = document.getElementById("myDiv");
+        let b = document.getElementById("btn2");
+        b.addEventListener('click', btn2Clicked, true);
+        d.addEventListener('click', divClicked, true);
+        document.body.addEventListener('click', bodyClicked, true);
+        /* if the above 3 methods are not given the third 'true' parameter, then when button 2 is clicked, the order of outputs is
+            1. Button 2 Clicked, 2. Div Clicked, 3. Body Clicked
+           With the true parameter, they are printed in the reverse order. 
+        */
+
+        function btn2Clicked() {
+            console.log("Button 2 Clicked")
+        }
+        function divClicked() {
+            console.log("Div Clicked")
+        }
+        function bodyClicked() {
+            console.log("Body Clicked")
+        }
+
+        let link = document.getElementById("anchor");
+        link.addEventListener('click', function(e) {
+            console.log("link clicked");
+            e.preventDefault(); // link doesn't open Google now
+        });
+
+        /*
+            Window is a default object.
+            if we define function xyz() {console.log("hello world")} then
+            xyz() and window.xyz() both call the function as window is a default object.
+        */
+
+    </script>
+
+</body>
+</html>

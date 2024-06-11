@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <title>Document</title>
+    <style>
+        .color{
+            background-color: yellow;
+            color: red;
+        }
+        .dim{
+            border: 1px solid red;
+            padding: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="btn">Send</button>
+    <hr>
+    <div id="box" class="color">
+        <p>hello world</p>
+    </div>
+    
+    <script>
+
+        // changing attributes
+        let btn1 = document.getElementById("btn");
+        btn.setAttribute("class", "form1"); // adding attribute
+        let val1 = btn.getAttribute("class"); // getting attribute
+        let val2 = btn.hasAttribute("class"); // returns boolean value whether the element has the entered attribute or not
+        btn.style.cssText += "background-color: red; color: yellow;"; // it replaces any previously defined styles if we use = instead of +=
+        // we can also do btn.setAttribute('style', 'background-color: red; color: yellow;');
+        btn.style.border = "1px solid green";
+        let style = getComputedStyle(btn);
+        // now console.log(style.color) prints rgb(255, 255, 255) etc.
+
+        let box = document.getElementById("box");
+        box.className += " dim"; // adding another class (remember to keep space before)
+        // console.log(box.classList) prints an array of all classes of box
+        // box.classList.add("dim") can also be used to add classes
+        // box.classList.remove("dim") is used to remove classes
+        // box.classList.replace("color", "dim") replaces classes
+        let res = box.classList.contains("dim"); // returns boolean value whether the given class is present or not
+        // box.classList.toggle("dim") removes dim if it is present and adds it otherwise
+
+        // offset height includes border, padding and margins
+        let offWidth = box.offsetWidth; // outputs 1115
+        let offHeight = box.offsetHeight; // outputs 253
+        let cliWidth = box.clientWidth; // outputs 1114
+        let cliHeight = box.clientHeight; // outputs 250
+
+    </script>
+
+</body>
+</html>
