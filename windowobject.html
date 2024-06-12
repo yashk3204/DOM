@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: red;
+        }
+        button{
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="btn1">Button 1</button>
+    <button id="btn2">Button 2</button>
+
+    <script>
+
+        console.log(window.innerHeight); // 730 changes as we resize the inspect window
+        console.log(window.innerWidth); // 1047 changes as we resize the inspect window
+        console.log(window.outerHeight); // 816
+        console.log(window.outerWidth); // 1536
+
+        let btn1 = document.getElementById("btn1");
+        let btn2 = document.getElementById("btn2");
+        let features = "height=500, width=500";
+        let win; // we define the variable win outside the function so it can be used in other functions also
+        btn1.addEventListener('click', function() {
+            win = window.open('https://www.google.com', 'Google', features); // it takes 3 parameters: url, name, features
+        })
+        btn2.addEventListener('click', function() {
+            win.close();
+        })
+
+    </script>
+
+</body>
+</html>

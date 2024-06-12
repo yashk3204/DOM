@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="btn" onclick="fun()">Redirect to Google</button>
+
+    <script>
+
+        // Location Object
+        console.log(location.href);
+        console.log(location.pathname);
+        console.log(location.protocol);
+        function fun() {
+            window.location="https://www.google.com"; 
+            // we can also do location.href = "https://www.google.com"; or location.assign("https://www.google.com");
+            // if we do location.replace("https://www.google.com"), it does the same thing but we cannot go back to our webpage
+            // location.reload() refreshes the current webpage.
+        }
+
+        // Navigator Object
+        console.log(navigator.appName);
+        console.log(navigator.appVersion);
+        console.log(navigator.appCodeName);
+        console.log(navigator.cookieEnabled);
+        console.log(navigator.userAgent);
+        console.log(navigator.platform);
+        console.log(navigator.javaEnabled);
+
+        // Screen Object
+        console.log(screen.height);
+        console.log(screen.width);
+        console.log(screen.colorDepth); // 24 bits => 16,777,216 different 'true colors', 32 bits => 4.3 billion 'true colors'
+        console.log(screen.orientation);
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="btn">Clear Interval</button>
+
+    <script>
+
+        // timeout
+        let timeout = setTimeout(myFunction, 5000);
+        function myFunction() {
+            alert("hello world");
+        }
+        // clearTimeout(timeout) is used to clear the timeout.
+
+        // time interval
+        var interval = setInterval(fun, 2000);
+        function fun() {
+            console.log("hello");
+        }
+        let btn = document.getElementById("btn");
+        btn.addEventListener('click', function() {
+            clearInterval(interval);
+        });
+
+    </script>
+
+</body>
+</html>
