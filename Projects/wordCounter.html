@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <title>Word Counter</title>
+
+    <style>
+        body{
+            padding: 50px 100px;
+        }
+        h1{
+            text-align: center;
+            background-color: #0067B0;
+            color: white;
+            padding: 10px;
+            margin: 0px;
+        }
+        #text{
+            width: 99.55%;
+            border-color: #0067B0;
+            font-size: 15px;
+        }
+        p{
+            text-align: center;
+            background-color: #0067B0;
+            font-weight: bold;
+            font-size: 25px;
+            color: white;
+            padding: 10px;
+            margin: 0px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>WORD COUNTER</h1>
+    <br>
+    <textarea id="text" cols="30" rows="10"></textarea>
+    <p>
+        <span id="words">0</span> words and <span id="char">0</span> characters
+    </p>
+
+    <script>
+
+
+        let textbox = document.getElementById("text");
+        textbox.addEventListener('input', function() {
+            // counting characters
+            var text = this.value;
+            let char = text.length;
+            document.getElementById("char").innerHTML = char;
+            // counting words
+            text = text.trim(); // removes extra spaces in the beginning and end of 'text' string
+            let words = text.split(" "); // splits 'text' string into an array of words wherever there is a space
+            let wordsFinal = words.filter(function(element) {
+                return element != ""; // deals with repeated spaces
+            })
+            document.getElementById("words").innerHTML = wordsFinal.length;
+        });
+
+    </script>
+
+</body>
+</html>

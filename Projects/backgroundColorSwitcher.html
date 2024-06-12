@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <title>Background Color Changer</title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 20px 100px;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline;
+        }
+        img{
+            width: 40%;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        p{
+            font-size: 18px;
+            text-align: justify;
+        }
+        .btn{
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            border: solid grey 2px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        #color-switcher{
+            text-align: right;
+        }
+        #white{
+            background-color: white;
+        }
+        #aqua{
+            background-color: aqua;
+        }
+        #violet{
+            background-color: #ce9aff;
+        }
+        #black{
+            background-color: black;
+        }
+
+    </style>
+
+    <style>
+    
+    </style>
+</head>
+
+<body>
+
+    <div id="color-switcher">
+        <span class="btn" id="white" onclick="changeBG('#ffffff')"></span>
+        <span class="btn" id="aqua" onclick="changeBG('#7fffd4')"></span>
+        <span class="btn" id="violet" onclick="changeBG('#ce9aff')"></span>
+        <span class="btn" id="black" onclick="changeBG('#000000')"></span>
+    </div>
+
+    <h1 class="text">ABOUT US</h1>
+    <img src="C:\Users\yashk\OneDrive\Desktop\Codes\DOM\Projects\aboutus.jpg">
+    <p class="text">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus adipisci delectus rerum veniam iste quisquam velit accusamus nulla rem quo non, aliquam sed magni quasi nisi cupiditate fugiat culpa sunt dolor consequatur repudiandae voluptatem nemo. Fugit, iusto vitae! Omnis illum non atque voluptas totam impedit ea commodi recusandae, officiis in aliquam ab repellendus alias dicta aut numquam harum repudiandae, repellat modi aspernatur minus itaque sunt animi et? Natus fugit cum nemo maiores non quae quia magnam architecto vel odit libero, nulla ex aliquam voluptatum alias placeat mollitia. Et quisquam expedita error! Porro sapiente maiores recusandae sint, et accusamus itaque, possimus, delectus a quam consequuntur dignissimos. Quaerat labore doloribus harum! Optio, quasi asperiores, esse, sed nemo cumque totam error repellendus nesciunt dolores tempore fugiat sint iusto. Itaque cumque dicta quos blanditiis corrupti quam optio tenetur voluptatibus? Dicta debitis in eum harum fugit animi consectetur eligendi amet perferendis dolorum quis cumque, quod possimus necessitatibus temporibus vel iure a autem laudantium molestiae? Voluptate quo dolorum unde recusandae maxime vitae et veritatis magni est nisi. Quis laboriosam eaque quidem corrupti vel, delectus consequuntur nihil numquam quisquam explicabo enim natus ea dolor nesciunt rerum minus. Expedita et laudantium ut unde ipsum voluptate repellendus quisquam accusantium!
+    </p>
+
+    <script>
+        function changeBG(color) {
+            document.body.style.backgroundColor = color;
+            let text = document.getElementsByClassName("text");
+            if(color == '#000000') {
+                for(let t of text) {
+                    t.style.color = "white";
+                }
+            }
+            else {
+                for(let t of text) {
+                    t.style.color = "black";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
