@@ -1,0 +1,45 @@
+body{
+    margin: 0px;
+}
+h1{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#aboutmebtn{
+    text-decoration: underline;
+}
+#aboutme{
+    justify-content: center;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#myprojects{
+    justify-content: center;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#contact{
+    justify-content: center;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#blog{
+    justify-content: center;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#menubar{
+    text-align: center;
+    height: 35px;
+    background-color: cadetblue;
+    justify-content: center;
+}
+.btn{
+    border-style: none;
+    background-color: cadetblue;
+    cursor: pointer;
+    color: white;
+    font-size: 28px;
+    margin-left: 20px;
+    margin-right: 20px;
+}

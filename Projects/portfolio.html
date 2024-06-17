@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+
+<body>
+
+    <h1>MY PERSONAL PORTFOLIO</h1>
+    <nav id="menubar">
+        <button class="btn" id="aboutmebtn" onclick="aboutme()">About Me</button>
+        <button class="btn" id="myprojectsbtn" onclick="myprojects()">My Projects</button>
+        <button class="btn" id="blogbtn" onclick="blog()">Blog</button>
+        <button class="btn" id="contactbtn" onclick="contact()">Contact</button>
+    </nav>
+
+    <div id="aboutme">
+        <br><br>
+        <img src="C:\Users\yashk\OneDrive\Desktop\Codes\DOM\Projects\aboutme.jpeg" alt="About Me Image"><br>
+        <p>My name is Yash Kantamneni.</p> 
+        <p>I am currently studying B.E. Computer Science at BITS Pilani, Hyderabad Campus.</p>
+        <p>I am working at T-Works as a Software Intern.</p>
+    </div>
+
+    <div id="myprojects" style="display:none">
+        <br><br>
+        <p>Here are some of my projects:</p>
+        <a href="C:\Users\yashk\OneDrive\Desktop\Codes\DOM\Projects\imageSlider.html">Image Slider</a><br>
+        <a href="C:\Users\yashk\OneDrive\Desktop\Codes\DOM\Projects\backgroundColorSwitcher.html">Background Color Switcher</a><br>
+        <a href="C:\Users\yashk\OneDrive\Desktop\Codes\DOM\Projects\stickyNavbar.html">Sticky Navbar</a><br>
+        <a href="C:\Users\yashk\OneDrive\Desktop\Codes\DOM\Projects\stopwatch.html">Stopwatch</a><br>
+        <a href="C:\Users\yashk\OneDrive\Desktop\Codes\DOM\Projects\temperatureConverter.html">Temperature Converter</a><br>
+        <a href="C:\Users\yashk\OneDrive\Desktop\Codes\DOM\Projects\wordCounter.html">Word Counter</a>
+    </div>
+
+    <div id="blog" style="display:none">
+        <br><br>
+        <form>
+            Title: <input type="text" placeholder="Enter title" id="title"><br><br>
+            Content: <textarea placeholder="Blog content here" id="title"></textarea><br>
+        </form>
+    </div>
+
+    <div id="contact" style="display:none;">
+        <br><br>
+        <p>Phone: +91 8820103282</p>
+        <p>Email: <a href="mailto:yashk3204@gmail.com">yashk3204@gmail.com</a></p>
+    </div>
+
+    <script src="portfolio.js"></script>
+
+</body>
+</html>
