@@ -40,9 +40,12 @@
 
     <div id="blog" style="display:none">
         <br><br>
-        <form>
+        <form action="" onsubmit="return validateForm()">
             Title: <input type="text" placeholder="Enter title" id="title"><br><br>
-            Content: <textarea placeholder="Blog content here" id="title"></textarea><br>
+            <p id="titleError" class="error"></p>
+            Content: <textarea placeholder="Blog content here" id="content"></textarea><br>
+            <p id="contentError" class="error"></p><br>
+            <input type="submit" id="submitbtn">
         </form>
     </div>
 

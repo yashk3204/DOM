@@ -6,6 +6,10 @@ var aboutMe = document.getElementById("aboutme");
 var myProjects = document.getElementById("myprojects");
 var Blog = document.getElementById("blog");
 var Contact = document.getElementById("contact");
+var title = document.getElementById("title");
+var content = document.getElementById("content");
+var titleError = document.getElementById("titleError");
+var contentError = document.getElementById("contentError");
 
 function aboutme() {
     aboutmebtn.style.textDecoration = "underline";
@@ -49,4 +53,28 @@ function contact() {
     myProjects.style.display = "none";
     Blog.style.display = "none";
     Contact.style.display = "block";
+}
+
+function validateForm() {
+    let flag=1;
+    if(title.value = "") {
+        titleError.innerHTML = "Please enter a title.";
+        flag=0;
+    }
+    else{
+        titleError.innerHTML = "";
+        if(content.innerHTML = "") {
+            contentError.innerHTML = "Please enter some content.";
+            flag=0;
+        }
+        else{
+            contentError.innerHTML = "";
+            flag=1;
+        }
+    }
+    if(flag) {
+        return true;
+    } else{
+        return false;
+    }
 }

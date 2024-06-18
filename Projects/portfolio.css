@@ -43,3 +43,10 @@ h1{
     margin-left: 20px;
     margin-right: 20px;
 }
+#submitbtn{
+    background-color: lightgreen;
+    height: 30px;
+    width: auto;
+    cursor: pointer;
+    border-radius: 10%;
+    }
