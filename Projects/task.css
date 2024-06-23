@@ -1,0 +1,40 @@
+body{
+    margin: 20px;
+    padding: 20px;
+}
+
+.card{
+    border-radius: 5%;
+    height: 650px;
+    width: 680px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 2px 16px;
+}
+
+#card1{
+    float: left;
+}
+
+#card2{
+    float: right;
+}
+
+#dp{
+    height: 150px;
+    width: auto;
+    float: right;
+}
+
+#contact{
+    font-size: larger;
+}
+
+p a{
+    color: blue;
+    text-decoration: none;
+    line-height: 130%;
+}
+
+#card2 ul{
+    line-height: 150%;
+}
